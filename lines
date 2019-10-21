@@ -1,0 +1,8 @@
+def lines(args):
+    ‘‘‘ 返回文件 file.c 的行数‘‘‘
+    try:
+        with open(args,‘r‘,encoding=‘UTF-8‘) as file:# 指定读取的编码方式为UTF-8
+            i = file.read().count(‘\n‘)
+            return i+1
+    except FileNotFoundError:
+        return ‘未找到该文件！‘
