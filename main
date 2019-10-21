@@ -1,0 +1,23 @@
+def main():
+    # 主程序
+    parser = OptionParser()
+    parser.add_option(‘-c‘,‘--char‘, dest = ‘char‘, action = ‘store‘,
+                      default = False, help = ‘only user to count chars‘)
+    parser.add_option(‘-l‘, ‘--line‘, dest = ‘line‘, action = ‘store‘,
+                      default = False, help = ‘only user to count lines‘)
+    parser.add_option(‘-w‘, ‘--word‘, dest = ‘word‘, action = ‘store‘,
+                      default = False, help = ‘only user to count words‘)
+    parser.add_option(‘-a‘,  dest = ‘type‘, action = ‘store‘,
+                      default = False, help = ‘only user to count type of line‘)
+    option, args  = parser.parse_args()
+
+    if option.char:
+        print(chars(option.char))
+    elif option.line:
+        print(lines(option.line))
+    elif option.word:
+        print(words(option.word))
+    elif option.type:
+        print(type(option.type))
+    else:
+        print(‘无效的命令行参数！‘)
