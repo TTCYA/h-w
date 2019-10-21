@@ -1,0 +1,13 @@
+def chars(args):
+    # 返回文件字符个数
+    try:
+        with open(args,‘r‘,encoding=‘UTF-8‘) as f:
+            file = f.readlines()
+            num = 0
+            for x in file:
+                for y in x:
+                    if (y >= ‘A‘ and y <= ‘Z‘) or (y >= ‘a‘ and y <=‘z‘):
+                        num += 1
+            return num
+    except FileNotFoundError:
+        return ‘未找到该文件！‘
