@@ -1,0 +1,16 @@
+#include <stdio.h>
+#include <stdlib.h>
+int main()
+{
+/*
+    wozhishiyonglaiceshi
+*/
+
+    printf("Hello,world");
+    printf("/*
+        kankanxingbuxing
+    */");
+    system("pause");//zhexiezhushiqishishimeiyouyongde
+//nikeyibukan
+    return 0;
+}
