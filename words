@@ -1,0 +1,18 @@
+def words(args):
+    # 返回文件单词数
+    try:
+        with open(args,‘r‘,encoding=‘UTF-8‘) as f:
+            file = f.readlines()
+            space_flag = False  # 标记上一个字符是否为空格
+            words_num = 0
+            for x in file:
+                for y in x:
+                    if (y < ‘A‘ or y >‘Z‘) and (y < ‘a‘ or y > ‘z‘):
+                        space_flag = True
+                    else:
+                        if space_flag == True:
+                            words_num += 1
+                            space_flag = False
+            return words_num
+    except FileNotFoundError:
+        return ‘未找到该文件！‘
